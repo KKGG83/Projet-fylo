@@ -1,0 +1,351 @@
+// ROOT
+
+$veryDarkBlue :hsl(243, 87%, 12%); 
+$desaturatedBlue:hsl(238, 22%, 44%); 
+$brightBlue:hsl(224, 93%, 58%); 
+$moderateCyan:hsl(170, 45%, 43%); 
+$lightGrayishBlue: hsl(240, 75%, 98%); 
+$lightGray: hsl(0, 0%, 75%);
+$white: #fff;
+$font-primary: url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+// General
+
+*{
+    margin: 0;
+    scroll-behavior: smooth;   
+    line-height: 1.5;
+    font-family: 'Open Sans', sans-serif;
+}
+
+@mixin container-width-1440($max-width: 1440px, $margin: auto, $padding: 0px 15px){
+    max-width: $max-width;
+    margin: $margin;
+    padding: $padding;
+}
+
+%title {
+    font-size: 40px;
+    color: $desaturatedBlue;
+}
+
+h1, 
+h2{
+    @extend %title;
+}
+
+p{
+    font-size: 16px;
+}
+
+a:hover {
+    transition: all 0.2s ease-in-out;
+    color: $moderateCyan;
+}
+
+// Header
+
+header {  
+    @include container-width-1440;  
+    display: flex;
+    justify-content: space-between;
+    img {
+        margin: 15px 0px;
+    }
+    nav{
+        align-content: center;
+        ul{
+            list-style: none;
+            padding: 0px;
+            display: flex;
+            gap: 20px;
+            a{
+                text-decoration: none;
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+
+// Section1
+
+@mixin section1-grid( $display: grid,  $grid-template-columns: 1fr 1fr, $gap: 80px, $margin: 50px auto){
+    display: $display;
+    grid-template-columns: $grid-template-columns;
+    gap: $gap;
+    margin: $margin;
+}
+
+#section1{
+    @include container-width-1440;
+    @include section1-grid;
+}
+
+#section1 > div{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-self: center;
+    hgroup{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+#section1 > img{
+    width: 100%;
+}
+
+#section1 > div > form > input:nth-child(1){
+    border: 1px solid $veryDarkBlue;
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 12px 8px;
+}
+
+@mixin button-section1 {
+    background-color: $brightBlue;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #fff;
+    padding: 12px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+#section1 > div > form > input:nth-child(2){
+    @include button-section1;
+}
+
+// Section2
+
+@mixin section2-grid($display: grid, $grid-template-columns: 1fr 1fr, $gap: 80px, $margin: 50px auto){
+    display: $display;
+    grid-template-columns: $grid-template-columns;
+    gap: $gap;
+    margin: $margin;
+}
+
+#section2 {
+    margin-top: 280px;
+    position: relative;
+    background-color: $lightGrayishBlue;
+}
+
+#section2 > div {
+    @include container-width-1440;
+    @include section2-grid; 
+    align-items: center;
+}
+
+#section2 > div > div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    a {
+        text-decoration: none;
+        border-bottom: 1px solid $moderateCyan;
+        width: 160px;
+        color: $moderateCyan;
+    }
+    a:hover {
+        opacity: 0.7;
+    }
+}
+
+#section2 > div > div > hgroup:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#section2 > div > div > article {
+    width: 70%;
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0px 1px 14px #e1e1e1;
+    border-radius: 6px;
+    margin-top: 35px;
+}
+
+#section2 > div > div > article > div{
+    display: grid;
+    grid-template-columns: 17% auto;
+    gap: 20px;
+    align-items: center;
+    margin: 30px 0;
+    img{
+        width: 100%;
+        border-radius: 50%;
+    }
+}
+
+
+#section2 > div > img{
+    width: 100%;
+}
+
+#section2::before {
+    content: "";
+    background-image: url(../img/bg-curve-desktop.svg);
+    position: absolute;
+    top: -128px;
+    width: 100%;
+    object-fit: cover;
+    background-size: cover;
+    height: 128px;
+}
+
+// Section3
+
+@mixin section3-grid ($grid-template-columns: 1fr 1fr, $display: grid, $gap: 200px){
+    display: $display;
+    grid-template-columns: $grid-template-columns;
+    gap: $gap;
+}
+
+#section3{
+    background-color: $desaturatedBlue;
+    div {
+        @include container-width-1440;
+        padding: 100px 15px;
+        @include section3-grid;
+        align-items: center;
+        color: $white;
+        h2{
+            color: $white;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            #email{
+                border: 1px solid transparent;
+                border-radius: 4px;
+                background-color: #fff;
+                padding: 12px 8px;
+
+            }
+            #submit{
+                @include button-section1;
+                width: 170px;
+            }
+        }
+    }
+}
+
+// Footer
+
+@mixin footer-grid($grid-template-column: 1fr 1fr 1fr 1fr, $display: grid, $gap: 20px){
+    display: $display;
+    grid-template-columns: $grid-template-column;
+    gap: $gap;
+}
+
+footer {
+    background-color: $veryDarkBlue;
+    div{
+        @include container-width-1440;
+        @include footer-grid;
+        padding: 100px 15px;
+        article:nth-child(4) > ul > li:nth-child(1) > a,
+        article:nth-child(4) > ul > li:nth-child(2) > a,
+        article:nth-child(4) > ul > li:nth-child(3) > a{
+            border: 1px solid #fff;
+            border-radius: 50%;
+            padding: 5px 8px;
+        }
+        ul{
+            list-style: none;
+            padding: 0px;
+            display: grid;
+            gap: 10px;
+            a{
+                text-decoration: none;
+                color: $white;
+            }
+            
+        }
+    }
+}
+
+footer > div > article:nth-child(1) > h2 {
+    color: $white;
+    margin-bottom: 20px;
+}
+
+footer > div > article:nth-child(1) > h2::before{
+    content: "";
+    height: 32px;
+    width: 32px;
+    display: inline-block;
+    background-image: url(https://storycom.github.io/scssproject/img/favicon-32x32.png);
+}
+
+footer > div > article:nth-child(1) > ul > li > a > img {
+    margin-right: 5px;
+}
+
+@function calcul-px($size){
+    @return $size / 22px * 1rem;
+}
+
+footer > div > article:nth-child(4) > ul {
+    display: flex;
+    gap: 40px;
+    font-size: calcul-px(32px);
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    #section1 {
+        grid-template-columns: 1fr;
+    }
+
+    #section2 > div {
+        grid-template-columns: 1fr;
+    }
+
+    #section3 > div {
+        grid-template-columns: 1fr;
+        gap: 100px;
+    }
+
+    footer > div{
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 767px){
+
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #section1 {
+        grid-template-columns: 1fr;
+    }
+
+    #section2 > div {
+        grid-template-columns: 1fr;
+    }
+
+    #section3 > div {
+        grid-template-columns: 1fr;
+        gap: 100px;
+    }
+
+    footer > div{
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    #section1 > div > form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}

@@ -1,0 +1,298 @@
+* {
+  margin: 0;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h2 {
+  font-size: 40px;
+  color: hsl(238, 22%, 44%);
+}
+
+p {
+  font-size: 16px;
+}
+
+a:hover {
+  transition: all 0.2s ease-in-out;
+  color: hsl(170, 45%, 43%);
+}
+
+header {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0px 15px;
+  display: flex;
+  justify-content: space-between;
+}
+header img {
+  margin: 15px 0px;
+}
+header nav {
+  align-content: center;
+}
+header nav ul {
+  list-style: none;
+  padding: 0px;
+  display: flex;
+  gap: 20px;
+}
+header nav ul a {
+  text-decoration: none;
+  font-size: 16px;
+}
+
+#section1 {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0px 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin: 50px auto;
+}
+
+#section1 > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-self: center;
+}
+#section1 > div hgroup {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#section1 > img {
+  width: 100%;
+}
+
+#section1 > div > form > input:nth-child(1) {
+  border: 1px solid hsl(243, 87%, 12%);
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 12px 8px;
+}
+
+#section1 > div > form > input:nth-child(2) {
+  background-color: hsl(224, 93%, 58%);
+  border-radius: 4px;
+  font-size: 16px;
+  color: #fff;
+  padding: 12px 16px;
+  border: none;
+  cursor: pointer;
+}
+
+#section2 {
+  margin-top: 280px;
+  position: relative;
+  background-color: hsl(240, 75%, 98%);
+}
+
+#section2 > div {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0px 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin: 50px auto;
+  align-items: center;
+}
+
+#section2 > div > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#section2 > div > div a {
+  text-decoration: none;
+  border-bottom: 1px solid hsl(170, 45%, 43%);
+  width: 160px;
+  color: hsl(170, 45%, 43%);
+}
+#section2 > div > div a:hover {
+  opacity: 0.7;
+}
+
+#section2 > div > div > hgroup:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#section2 > div > div > article {
+  width: 70%;
+  background-color: white;
+  padding: 30px;
+  box-shadow: 0px 1px 14px #e1e1e1;
+  border-radius: 6px;
+  margin-top: 35px;
+}
+
+#section2 > div > div > article > div {
+  display: grid;
+  grid-template-columns: 17% auto;
+  gap: 20px;
+  align-items: center;
+  margin: 30px 0;
+}
+#section2 > div > div > article > div img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+#section2 > div > img {
+  width: 100%;
+}
+
+#section2::before {
+  content: "";
+  background-image: url(../img/bg-curve-desktop.svg);
+  position: absolute;
+  top: -128px;
+  width: 100%;
+  object-fit: cover;
+  background-size: cover;
+  height: 128px;
+}
+
+#section3 {
+  background-color: hsl(238, 22%, 44%);
+}
+#section3 div {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0px 15px;
+  padding: 100px 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 200px;
+  align-items: center;
+  color: #fff;
+}
+#section3 div h2 {
+  color: #fff;
+}
+#section3 div form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+#section3 div form #email {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 12px 8px;
+}
+#section3 div form #submit {
+  background-color: hsl(224, 93%, 58%);
+  border-radius: 4px;
+  font-size: 16px;
+  color: #fff;
+  padding: 12px 16px;
+  border: none;
+  cursor: pointer;
+  width: 170px;
+}
+
+footer {
+  background-color: hsl(243, 87%, 12%);
+}
+footer div {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0px 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 100px 15px;
+}
+footer div article:nth-child(4) > ul > li:nth-child(1) > a,
+footer div article:nth-child(4) > ul > li:nth-child(2) > a,
+footer div article:nth-child(4) > ul > li:nth-child(3) > a {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 5px 8px;
+}
+footer div ul {
+  list-style: none;
+  padding: 0px;
+  display: grid;
+  gap: 10px;
+}
+footer div ul a {
+  text-decoration: none;
+  color: #fff;
+}
+
+footer > div > article:nth-child(1) > h2 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+footer > div > article:nth-child(1) > h2::before {
+  content: "";
+  height: 32px;
+  width: 32px;
+  display: inline-block;
+  background-image: url(https://storycom.github.io/scssproject/img/favicon-32x32.png);
+}
+
+footer > div > article:nth-child(1) > ul > li > a > img {
+  margin-right: 5px;
+}
+
+footer > div > article:nth-child(4) > ul {
+  display: flex;
+  gap: 40px;
+  font-size: 1.4545454545rem;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #section1 {
+    grid-template-columns: 1fr;
+  }
+  #section2 > div {
+    grid-template-columns: 1fr;
+  }
+  #section3 > div {
+    grid-template-columns: 1fr;
+    gap: 100px;
+  }
+  footer > div {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+  #section1 {
+    grid-template-columns: 1fr;
+  }
+  #section2 > div {
+    grid-template-columns: 1fr;
+  }
+  #section3 > div {
+    grid-template-columns: 1fr;
+    gap: 100px;
+  }
+  footer > div {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  #section1 > div > form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
